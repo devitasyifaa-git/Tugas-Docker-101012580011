@@ -1,0 +1,14 @@
+services:
+  web:
+    image: web-tugas-101012580011:1.0
+    container_name: web-compose-101012580011
+    ports:
+      - "8080:8000"
+    environment:
+      STUDENT_NIM: "101012580011"
+    depends_on:
+      - cache
+
+  cache:
+    image: redis:7-alpine
+    container_name: cache-101012580011
